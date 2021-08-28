@@ -24,6 +24,20 @@
             background-color:purple;
             margin-left: 10px;
         }
+        @keyframes block {
+            0%{
+                height: 10px;
+            }
+            20%{
+                height: 90px;
+            }
+            45%{
+                height: 40px;
+            }
+            100%{
+                height: 120px;
+            }
+        }
         #second{
             background-color:deeppink
         }
@@ -54,29 +68,27 @@
 </head>
 <body>
     <div class="main">
-       <div>
-
-       </div>
-       <div id="first" class="child">
-
-       </div>
-       <div id="second" class="child">
-
-       </div>
-       <div id="third" class="child">
-
-       </div>
-       <div id="forth" class="child">
-
-       </div>
-       <div id="fifth" class="child">
-
-       </div>
+       <div id="first" class="child"></div>
+       <div id="second" class="child"></div>
+       <div id="third" class="child"></div>
+       <div id="forth" class="child"></div>
+       <div id="fifth" class="child"></div>
     </div>
+
     <div class="btndiv">
         <button id="start" class="btn">Start</button>
         <button id="stop" class="btn">Stop</button>
     </div>
-    
+
+    <script>
+    document.getElementById('start').onclick=start;
+    function start(){
+        document.getElementById('first').style.animationName='block';
+        document.getElementById('first').style.animationDuration='2s';
+        document.getElementById('first').style.animationIterationCount='infinite';
+        document.getElementById('first').style.animationDirection='alternate';
+    }
+
+    </script>
 </body>
 </html>
